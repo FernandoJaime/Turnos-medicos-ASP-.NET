@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Clientes de la obra social";
+}
+
+@model List<Cliente>
+
+@{
+    var obra = ViewBag.Obra;
+    string nombreObra = obra != null ? obra.NombreObraSocial : "Obra Social Desconocida";
+}
+<h1> Clientes de la obra social: @nombreObra</h1>
+
+<hr />
+
+<p>
+    <a asp-action="Index" class="btn btn-outline-dark btn-sm">Volver</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c => cliente.CodigoCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.NombreCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.ApellidoCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.EmailCliente)</td>
+            </tr>
+        }
+    </tbody>
+</table>

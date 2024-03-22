@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Obras sociales";
+}
+@model List<Obrasocial>
+
+<h1>Obras sociales</h1>
+
+<hr />
+
+<div class="container body-content">
+    <div class="row">
+        <div class="col-6">
+            <a asp-action="Add" class="btn btn-success btn-sm">Añadir nueva obra social</a>
+        </div>
+        <div class="col-6">
+            <form asp-action="Index" method="get">
+                <div class="row">
+                    <div class="col-6">
+                        @{
+                            var selectedValue = Context.Request.Query["filtro"].ToString();
+                            <!-- Variable para guardar el filtro seleccionado -->
+                        }
+                        <!-- Combo box con las opciones de obra social -->
+                        <select name="filtro" class="form-control">
+                            <!-- Opción para mostrar todas las obras sociales -->
+                            <option value="all" selected="@((Context.Request.Query["filtro"] == "all") ? "selected" : null)">Todas</option>
+                            <option value="Menor precio" selected="@((Context.Request.Query["filtro"] == "Menor precio") ? "selected" : null)">Menor precio</option>
+                            <option value="Mayor precio" selected="@((Context.Request.Query["filtro"] == "Mayor precio") ? "selected" : null)">Mayor precio</option>
+                            <option value="Mayor cantidad de clientes" selected="@((Context.Request.Query["filtro"] == "Mayor cantidad de clientes") ? "selected" : null)">Mayor cantidad de clientes</option>
+                            <option value="Menor cantidad de clientes" selected="@((Context.Request.Query["filtro"] == "Menor cantidad de clientes") ? "selected" : null)">Menor cantidad de clientes</option>
+                            <option value="Z-A" selected="@((Context.Request.Query["filtro"] == "Z-A") ? "selected" : null)">Z-A</option>
+                            <option value="A-Z" selected="@((Context.Request.Query["filtro"] == "A-Z") ? "selected" : null)">A-Z</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-info">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obra in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c => obra.CodigoObraSocial)</td>
+                <td>@Html.DisplayFor(c => obra.NombreObraSocial)</td>
+                <td>@Html.DisplayFor(c => obra.PrecioObraSocial)</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-route-id="@obra.IdObraSocial">Editar</a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@obra.IdObraSocial">Eliminar</a> |
+                    @{
+                        <!-- Si la obra social tiene clientes asociados habilito el boton -->
+                        if (obra.Clientes != null && obra.Clientes.Any()) 
+                        {
+                            <a asp-action="Clientes" class="btn btn-info btn-sm" asp-route-id="@obra.IdObraSocial">Clientes</a>
+                        }
+                        else
+                        {
+                            <button class="btn btn-info btn-sm" disabled>Clientes</button>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

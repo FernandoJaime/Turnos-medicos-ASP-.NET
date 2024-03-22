@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Clientes";
+}
+@model List<Cliente>
+
+<h1>Clientes</h1>
+
+<hr />
+<div class="container body-content">
+    <div class="row">
+        <div class="col-6">
+            <a asp-action="Add" class="btn btn-success btn-sm">Añadir nuevo cliente</a>
+        </div>
+        <div class="col-6">
+            <form asp-action="Index" method="get">
+                <div class="row">
+                    <div class="col-6">
+                        @{
+                            var selectedValue = Context.Request.Query["obrasocial"].ToString(); <!-- Variable para guardar la obra social seleccionada -->
+                        }
+                        <!-- Combo box con las opciones de obra social -->
+                        <select name="obrasocial" id="obrasocial" class="form-control">
+                            <!-- Opción para mostrar todas las obras sociales -->
+                            <option value="all" selected="@((Context.Request.Query["obrasocial"] == "all") ? "selected" : null)">Todos</option>
+                            <!-- Iteración sobre las obras sociales disponibles -->
+                            @foreach (var item in ViewBag.ObrasID)
+                            {
+                                if (item.Value.ToString() == selectedValue)
+                                {
+                                    <!-- Si la obra social es la seleccionada -->
+                                    <option value="@item.Value" selected>@item.Text</option> <!-- Se marca como seleccionada -->
+                                }
+                                else
+                                {
+                                    <option value="@item.Value">@item.Text</option> <!-- Si no, se agrega normalmente -->
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-info">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Obra social</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c => cliente.CodigoCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.NombreCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.ApellidoCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.EmailCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.IdObraSocialClienteNavigation.NombreObraSocial)</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-route-id="@cliente.IdClientes">Editar</a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@cliente.IdClientes">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

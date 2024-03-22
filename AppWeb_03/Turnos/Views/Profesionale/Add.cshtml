@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Añadir profesional";
+}
+
+@model Profesionale
+
+<h1>Añadiendo nuevo profesional</h1>
+
+<hr />
+
+<div class="row">
+    <form asp-action="Index">
+        <div class="d-grid d-md-flex justify-content-md-end col-md-6">
+            <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+        </div>
+    </form>
+    <form asp-action="Add">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label">Codigo:</label>
+                    <input asp-for="CodigoProfesional" class="form-control" />
+                    <span asp-validation-for="CodigoProfesional" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="control-label">Nombre:</label>
+                    <input asp-for="NombreProfesional" class="form-control" />
+                    <span asp-validation-for="NombreProfesional" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label">Apellido:</label>
+                    <input asp-for="ApellidoProfesional" class="form-control" />
+                    <span asp-validation-for="ApellidoProfesional" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label" for="FechaDeRecibimiento">Fecha de recibimiento:</label>
+                    <input asp-for="FechaDeRecibimiento" class="form-control" type="date" id="FechaDeRecibimiento" />
+                    <span asp-validation-for="FechaDeRecibimiento" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <input type="submit" value="Añadir" class="btn btn-success btn-sm" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Profesionales";
+}
+@model List<Profesionale>
+
+<h1>Profesionales</h1>
+
+<hr />
+<div class="container body-content">
+    <div class="row">
+        <div class="col-6">
+            <a asp-action="Add" class="btn btn-success btn-sm">Añadir nuevo profesional</a>
+        </div>
+        <div class="col-6">
+            <form asp-action="Index" method="get">
+                <div class="row">
+                    <div class="col-6">
+                        @{
+                            var selectedValue = Context.Request.Query["filtro"].ToString();
+                            <!-- Variable para guardar el filtro seleccionado -->
+                        }
+                        <!-- Combo box con las opciones de obra social -->
+                        <select name="filtro" class="form-control">
+                            <!-- Opción para mostrar todas las obras sociales -->
+                            <option value="all" selected="@((Context.Request.Query["filtro"] == "all") ? "selected" : null)">Todos</option>
+                            <option value="Mas antiguos" selected="@((Context.Request.Query["filtro"] == "Mas antiguos") ? "selected" : null)">Mas antiguos</option>
+                            <option value="Mas recientes" selected="@((Context.Request.Query["filtro"] == "Mas recientes") ? "selected" : null)">Mas recientes</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-info">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de recibimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var profe in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c => profe.CodigoProfesional)</td>
+                <td>@Html.DisplayFor(c => profe.NombreProfesional)</td>
+                <td>@Html.DisplayFor(c => profe.ApellidoProfesional)</td>
+                <td>@Html.DisplayFor(c => profe.FechaDeRecibimiento)</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-route-id="@profe.IdProfesional">Editar</a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@profe.IdProfesional">Eliminar</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

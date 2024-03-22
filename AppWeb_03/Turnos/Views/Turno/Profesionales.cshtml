@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Profesionales con turnos";
+}
+
+@model List<Profesionale>
+
+<h1>Informacion de los profesionales</h1>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger" role="alert">
+        @foreach (var key in ViewData.ModelState.Keys)
+        {
+            foreach (var error in ViewData.ModelState[key].Errors)
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        }
+    </div>
+}
+
+<hr />
+
+<p>
+    <a asp-action="Index" class="btn btn-outline-dark btn-sm">Volver</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de recibimiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var profe in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c => profe.CodigoProfesional)</td>
+                <td>@Html.DisplayFor(c => profe.NombreProfesional)</td>
+                <td>@Html.DisplayFor(c => profe.ApellidoProfesional)</td>
+                <td>@Html.DisplayFor(c => profe.FechaDeRecibimiento)</td>
+            </tr>
+        }
+    </tbody>
+</table>

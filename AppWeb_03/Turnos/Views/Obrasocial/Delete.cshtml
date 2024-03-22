@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Eliminar obra social";
+}
+@model Obrasocial
+
+<h1>Eliminando obra social</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Index">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+            </div>
+        </form>
+        <form asp-action="Delete">
+            <h5>¿Esta seguro que quiere eliminar a esta obra social?</h5>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Codigo:</label>
+                    <input asp-for="CodigoObraSocial" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Nombre:</label>
+                    <input asp-for="NombreObraSocial" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>$ Precio:</label>
+                    <input asp-for="PrecioObraSocial" class="form-control" readonly />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

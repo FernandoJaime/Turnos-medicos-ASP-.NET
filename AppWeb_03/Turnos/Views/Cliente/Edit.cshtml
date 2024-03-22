@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Editar cliente";
+}
+@model Cliente
+
+<h1>Editando cliente</h1>
+
+<hr />
+
+<div class="row">
+    <form asp-action="Index">
+        <div class="d-grid d-md-flex justify-content-md-end col-md-6">
+            <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+        </div>
+    </form>
+    <form asp-action="Edit">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="CodigoCliente" class="control-label">@Html.DisplayNameFor(n => n.CodigoCliente)</label>
+                    <input asp-for="CodigoCliente" class="form-control" readonly />
+                    <span asp-validation-for="CodigoCliente" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="NombreCliente" class="control-label">@Html.DisplayNameFor(n => n.NombreCliente)</label>
+                    <input asp-for="NombreCliente" class="form-control" />
+                    <span asp-validation-for="NombreCliente" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="ApellidoCliente" class="control-label">@Html.DisplayNameFor(n => n.ApellidoCliente)</label>
+                    <input asp-for="ApellidoCliente" class="form-control" />
+                    <span asp-validation-for="ApellidoCliente" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="EmailCliente" class="control-label">@Html.DisplayNameFor(n => n.EmailCliente)</label>
+                    <input asp-for="EmailCliente" class="form-control" />
+                    <span asp-validation-for="EmailCliente" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="IdObraSocialCliente" class="control-label">@Html.DisplayNameFor(n => n.IdObraSocialClienteNavigation.NombreObraSocial)</label>
+                    <select asp-for="IdObraSocialCliente" class="form-control" asp-items="ViewBag.ObrasID"></select>
+                    <span asp-validation-for="IdObraSocialCliente" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-warning btn-sm" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

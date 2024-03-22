@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Eliminar turno";
+}
+@model Turno
+
+<h1>Eliminando turno</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Index">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+            </div>
+        </form>
+        <form asp-action="Delete">
+            <h5>Esta seguro que quiere dar de baja este turno?</h5>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="CodigoTurno" class="control-label">@Html.DisplayNameFor(n => n.CodigoTurno)</label>
+                    <input asp-for="CodigoTurno" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="RazonDeTurno" class="control-label">@Html.DisplayNameFor(n => n.RazonDeTurno)</label>
+                    <input asp-for="RazonDeTurno" class="form-control" readonly/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Fecha de recibimiento:</label>
+                    <input asp-for="FechaTurno" class="form-control" type="date" id="FechaDeRecibimiento" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="ProfesionalId" class="control-label">@Html.DisplayNameFor(n => n.Profesional.ApellidoProfesional)</label>
+                    <select asp-for="ProfesionalId" class="form-control" asp-items="ViewBag.Profesionales" readonly></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="ClienteId" class="control-label">@Html.DisplayNameFor(n => n.Cliente.ApellidoCliente)</label>
+                    <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.Clientes" readonly></select>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Dar de baja" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>

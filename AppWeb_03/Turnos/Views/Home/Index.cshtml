@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Administracion";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        .jumbotron {
+            background-color: #f8f9fa; /* Color de fondo */
+        }
+
+        .container {
+            margin-top: 10px; /* Margen superior */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Bienvenido al sistema de administración</h1>
+        <p>Administra tus clientes, turnos, profesionales y obras sociales de manera eficiente.</p>
+        <p style="font-size: small; color: #999;">
+            Podrá agregar cualquier otra categoría cuando lo desee contactándose con el programador:
+            <a href="mailto:Ferjaime11@hotmail.com" style="color: #999;">Ferjaime11@hotmail.com</a>
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Clientes</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Administra los clientes y sus datos personales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Turnos</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Administra los turnos programados y su asignación.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Profesionales</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Administra los profesionales y sus datos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Obras sociales</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Administra las obras sociales con las que trabaja y sus precios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

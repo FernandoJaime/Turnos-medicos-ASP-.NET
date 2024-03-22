@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Registrar nuevo turno";
+}
+@using Turnos.Models.ViewModels
+@model TurnoViewModel
+
+<h1>Registrando turno</h1>
+
+<hr />
+
+<div class="row">
+    <form asp-action="Index">
+        <div class="d-grid d-md-flex justify-content-md-end col-md-6">
+            <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+        </div>
+    </form>
+    <form asp-action="Add">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="CodigoTurno" class="control-label"></label>
+                    <input asp-for="CodigoTurno" class="form-control" />
+                    <span asp-validation-for="CodigoTurno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="RazonDeTurno" class="control-label">Razon del turno:</label>
+                    <input asp-for="RazonDeTurno" class="form-control" rows="3" id="RazonDeTurno"/>
+                    <span asp-validation-for="RazonDeTurno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="control-label" for="Fecha">Fecha:</label>
+                    <input asp-for="FechaTurno" class="form-control" type="date" id="Fecha" />
+                    <span asp-validation-for="FechaTurno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="ProfesionalId" class="control-label"></label>
+                    <select asp-for="ProfesionalId" class="form-control" asp-items="ViewBag.Profesionales"></select>
+                    <span asp-validation-for="ProfesionalId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="ClienteId" class="control-label"></label>
+                    <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.Clientes"></select>
+                    <span asp-validation-for="ClienteId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <input type="submit" value="Registrar" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

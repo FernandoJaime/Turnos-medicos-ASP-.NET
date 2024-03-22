@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Turnos";
+}
+@model List<Turno>
+
+<h1>Turnos</h1>
+
+<hr />
+<div class="container body-content">
+    <div class="row">
+        <div class="col-6">
+            <a asp-action="Add" class="btn btn-success btn-sm">Registrar nuevo turno</a>
+            <a asp-action="Clientes" class="btn btn-outline-primary btn-sm">Clientes con turnos pendientes</a>
+            <a asp-action="Profesionales" class="btn btn-outline-primary btn-sm">Profesionales con turnos pendientes</a>
+        </div>
+        <div class="col-6">
+            <form asp-action="Index" method="get">
+                <div class="row">
+                    <div class="col-6">
+                        @{
+                            var selectedValue = Context.Request.Query["filtro"].ToString();
+                            <!-- Variable para guardar el filtro seleccionado -->
+                        }
+                        <!-- Combo box con las opciones de obra social -->
+                        <select name="filtro" class="form-control">
+                            <!-- Opción para mostrar todas las obras sociales -->
+                            <option value="all" selected="@((Context.Request.Query["filtro"] == "all") ? "selected" : null)">Todos</option>
+                            <option value="Turno mas nuevo" selected="@((Context.Request.Query["filtro"] == "Turno mas nuevo") ? "selected" : null)">Turno mas nuevo</option>
+                            <option value="Turno mas antiguo" selected="@((Context.Request.Query["filtro"] == "Turno mas antiguo") ? "selected" : null)">Turno mas antiguo</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-info">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Razon del turno</th>
+            <th>Fecha</th>
+            <th>Profesional</th>
+            <th>Codigo del profesional</th>
+            <th>Cliente</th>
+            <th>Codigo del cliente</th>
+            <th>Obra social</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var turno in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c => turno.CodigoTurno)</td>
+                <td>@Html.DisplayFor(c => turno.RazonDeTurno)</td>
+                <td>@Html.DisplayFor(c => turno.FechaTurno)</td>
+                <td>@Html.DisplayFor(c => turno.Profesional.ApellidoProfesional)</td>
+                <td>@Html.DisplayFor(c => turno.Profesional.CodigoProfesional)</td>
+                <td>@Html.DisplayFor(c => turno.Cliente.ApellidoCliente)</td>
+                <td>@Html.DisplayFor(c => turno.Cliente.CodigoCliente)</td>
+                <td>@Html.DisplayFor(c => turno.Cliente.IdObraSocialClienteNavigation.NombreObraSocial)</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning btn-sm" asp-route-id="@turno.IdTurno">Editar</a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@turno.IdTurno">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

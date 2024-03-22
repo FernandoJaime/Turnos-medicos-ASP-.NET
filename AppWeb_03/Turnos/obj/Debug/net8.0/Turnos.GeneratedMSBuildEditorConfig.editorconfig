@@ -1,0 +1,119 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Turnos
+build_property.RootNamespace = Turnos
+build_property.ProjectDir = C:\Users\ferja\OneDrive\Escritorio\Archivos VS\Aprendiendo APIs\ASP .NET\AppWeb_03\Turnos\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ferja\OneDrive\Escritorio\Archivos VS\Aprendiendo APIs\ASP .NET\AppWeb_03\Turnos
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Cliente/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Cliente/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Cliente/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Cliente/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Obrasocial/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNvY2lhbFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Obrasocial/Clientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNvY2lhbFxDbGllbnRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Obrasocial/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNvY2lhbFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Obrasocial/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNvY2lhbFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Obrasocial/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2JyYXNvY2lhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Profesionale/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Profesionale/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Profesionale/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Profesionale/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uYWxlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Turno/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Turno/Clientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cQ2xpZW50ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Turno/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Turno/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Turno/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Turno/Profesionales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybm9cUHJvZmVzaW9uYWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ferja/OneDrive/Escritorio/Archivos VS/Aprendiendo APIs/ASP .NET/AppWeb_03/Turnos/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-w44izrtaoe

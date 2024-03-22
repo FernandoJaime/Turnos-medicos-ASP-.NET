@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Eliminar cliente";
+}
+@model Cliente
+
+<h1>Eliminando cliente</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Index">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+            </div>
+        </form>
+        <form asp-action="Delete">
+            <h5>Esta seguro que quiere eliminar a este cliente?</h5>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="CodigoCliente" class="control-label">@Html.DisplayNameFor(n => n.CodigoCliente)</label>
+                    <input asp-for="CodigoCliente" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="NombreCliente" class="control-label">@Html.DisplayNameFor(n => n.NombreCliente)</label>
+                    <input asp-for="NombreCliente" class="form-control" readonly/>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="ApellidoCliente" class="control-label">@Html.DisplayNameFor(n => n.ApellidoCliente)</label>
+                    <input asp-for="ApellidoCliente" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="EmailCliente" class="control-label">@Html.DisplayNameFor(n => n.EmailCliente)</label>
+                    <input asp-for="EmailCliente" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="IdObraSocialCliente" class="control-label">@Html.DisplayNameFor(n => n.IdObraSocialClienteNavigation.NombreObraSocial)</label>
+                    <select asp-for="IdObraSocialCliente" class="form-control" asp-items="ViewBag.ObrasID" readonly></select>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>

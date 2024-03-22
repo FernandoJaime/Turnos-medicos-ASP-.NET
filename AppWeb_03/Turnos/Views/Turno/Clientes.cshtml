@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Clientes con turnos";
+}
+
+@model List<Cliente>
+
+<h1>Informacion de los clientes</h1>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger" role="alert">
+        @foreach (var key in ViewData.ModelState.Keys)
+        {
+            foreach (var error in ViewData.ModelState[key].Errors)
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        }
+    </div>
+}
+
+<hr />
+
+<p>
+    <a asp-action="Index" class="btn btn-outline-dark btn-sm">Volver</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c => cliente.CodigoCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.NombreCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.ApellidoCliente)</td>
+                <td>@Html.DisplayFor(c => cliente.EmailCliente)</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Editar turno";
+}
+@model Turno
+
+<h1>Editando Turno</h1>
+
+<hr />
+
+<div class="row">
+    <form asp-action="Index">
+        <div class="d-grid d-md-flex justify-content-md-end col-md-6">
+            <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+        </div>
+    </form>
+    <form asp-action="Edit">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="CodigoTurno" class="control-label">@Html.DisplayNameFor(n => n.CodigoTurno)</label>
+                    <input asp-for="CodigoTurno" class="form-control" readonly />
+                    <span asp-validation-for="CodigoTurno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="RazonDeTurno" class="control-label">@Html.DisplayNameFor(n => n.RazonDeTurno)</label>
+                    <input asp-for="RazonDeTurno" class="form-control" />
+                    <span asp-validation-for="RazonDeTurno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Fecha de recibimiento:</label>
+                    <input asp-for="FechaTurno" class="form-control" type="date" id="FechaDeRecibimiento" />
+                    <span asp-validation-for="FechaTurno" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="ProfesionalId" class="control-label">@Html.DisplayNameFor(n => n.Profesional.ApellidoProfesional)</label>
+                    <select asp-for="ProfesionalId" class="form-control" asp-items="ViewBag.Profesionales"></select>
+                    <span asp-validation-for="ProfesionalId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="ClienteId" class="control-label">@Html.DisplayNameFor(n => n.Cliente.ApellidoCliente)</label>
+                    <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.Clientes"></select>
+                    <span asp-validation-for="ClienteId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-warning" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

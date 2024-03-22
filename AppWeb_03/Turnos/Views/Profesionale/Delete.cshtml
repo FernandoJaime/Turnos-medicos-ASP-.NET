@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Eliminar profesional";
+}
+@model Profesionale
+
+<h1>Eliminando profesional</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Index">
+            <div class="d-grid d-md-flex justify-content-md-end">
+                <input type="submit" value="Volver" class="btn btn-outline-dark btn-sm" />
+            </div>
+        </form>
+        <form asp-action="Delete">
+            <h5>¿Esta seguro que quiere eliminar a este profesional?</h5>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Codigo:</label>
+                    <input asp-for="CodigoProfesional" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Nombre:</label>
+                    <input asp-for="NombreProfesional" class="form-control" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label>Apellido:</label>
+                    <input asp-for="ApellidoProfesional" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Fecha de recibimiento:</label>
+                    <input asp-for="FechaDeRecibimiento" class="form-control" type="date" id="FechaDeRecibimiento" readonly />
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
